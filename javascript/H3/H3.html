@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Copse&display=swap" rel="stylesheet">
+    <style>
+        html {
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+
+        body {
+            font-family: 'Copse', serif;
+            text-align: center;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            border: 0;
+        }
+
+        #pics {
+            width: 900px;
+            height: 900px;
+            border: solid 1px black;
+            font-size: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Character Shuffle</h1>
+<div id="pics">
+    <img src="char1.jpg">
+    <img src="char2.jpg ">
+    <img src="char3.jpg">
+    <img src="char4.jpg">
+    <img src="char5.jpg ">
+    <img src="char6.jpg ">
+    <img src="char7.jpg">
+    <img src="char8.jpg">
+    <img src="char9.jpg ">
+</div>
+<script>
+    var plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+
+    var randomNumbers = [];
+
+    while (randomNumbers.length < 9) {
+        random = Math.floor(Math.random() * 9) + 1
+        if (randomNumbers.lastIndexOf(random) == -1)
+            randomNumbers.push(random)
+            console.log(randomNumbers)
+    }
+    random = 0;
+    for(var plaatje in plaatjes) {
+        plaatjes[plaatje].src = "char" + randomNumbers[random] + ".jpg";
+        random++;
+    }
+</script>
+
+</body>
+</html>
+
+
+<!--<script>
+    var a = ["aap", "noot", "mies"];
+    console.log(a[2]);
+</script>
